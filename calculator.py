@@ -64,7 +64,7 @@ class Ui_Calculator(object):
         self.teclas_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.teclas_frame.setObjectName("teclas_frame")
         self.clearButton = QtWidgets.QPushButton(self.teclas_frame, clicked=lambda: self.clique("C"))
-        self.clearButton.setGeometry(QtCore.QRect(20, 20, 100, 100))
+        self.clearButton.setGeometry(QtCore.QRect(20, 20, 220, 100))
         font = QtGui.QFont()
         font.setFamily("Montserrat Black")
         font.setPointSize(28)
@@ -75,18 +75,6 @@ class Ui_Calculator(object):
 "color: rgb(230, 230, 230);\n"
 "border-radius: 15px;")
         self.clearButton.setObjectName("clearButton")
-        self.percentButton = QtWidgets.QPushButton(self.teclas_frame, clicked=lambda: self.porcentagem())
-        self.percentButton.setGeometry(QtCore.QRect(140, 20, 100, 100))
-        font = QtGui.QFont()
-        font.setFamily("Montserrat Black")
-        font.setPointSize(28)
-        font.setBold(True)
-        font.setWeight(75)
-        self.percentButton.setFont(font)
-        self.percentButton.setStyleSheet("background-color: rgb(50, 50, 50);\n"
-"color: rgb(230, 230, 230);\n"
-"border-radius: 15px;")
-        self.percentButton.setObjectName("percentButton")
         self.multiplyButton = QtWidgets.QPushButton(self.teclas_frame, clicked=lambda: self.multiplicacao())
         self.multiplyButton.setGeometry(QtCore.QRect(260, 20, 100, 100))
         font = QtGui.QFont()
@@ -347,11 +335,7 @@ class Ui_Calculator(object):
     	self.visor.setText(str(resposta))
 
     
-#    def porcentagem(self):
-#    	global valor_inicial
-#    	valor_inicial = self.visor.text()
-#    	pass
-    
+   
     #Cria função +/-
     def mais_menos(self):
     	valor_inicial_tela = self.visor.text()
@@ -385,7 +369,6 @@ class Ui_Calculator(object):
         Calculator.setWindowTitle(_translate("Calculator", "Calculator"))
         self.visor.setText(_translate("Calculator", "0"))
         self.clearButton.setText(_translate("Calculator", "C"))
-        self.percentButton.setText(_translate("Calculator", "%"))
         self.multiplyButton.setText(_translate("Calculator", "X"))
         self.divisionButton.setText(_translate("Calculator", "/"))
         self.sevenButton.setText(_translate("Calculator", "7"))
